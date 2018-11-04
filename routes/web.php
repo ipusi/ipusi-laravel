@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\WechatMenuController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/wechatmenu', 'WechatMenuController@index')->name('wechatmenu.index');

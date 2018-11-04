@@ -1,4 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/weixin-menu.js": "/js/weixin-menu.js",
+    "/js/template-web.js": "/js/template-web.js",
+    "/css/menu.css": "/css/menu.css"
 }

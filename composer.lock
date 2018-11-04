@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f68b576c658a9cd921035f5779adbe04",
+    "content-hash": "6482f32ffa4cd1d17603230411f6d606",
     "packages": [
         {
             "name": "caouecs/laravel-lang",
@@ -729,6 +729,52 @@
             "time": "2017-06-15T17:19:42+00:00"
         },
         {
+            "name": "ipusi/wechat",
+            "version": "9999999-dev",
+            "dist": {
+                "type": "path",
+                "url": "app/Admin/Extensions/laravel-admin-ext/wechat",
+                "reference": "abb1e536e44d97a35ffe70a5b9d4284a881f1ace",
+                "shasum": null
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelAdminExt\\Wechat\\WechatServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelAdminExt\\Wechat\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ren kun",
+                    "email": "rk.tingyu@icloud.com"
+                }
+            ],
+            "description": "laravel-admin extends for wechat",
+            "homepage": "https://github.com/ipusi/wechat",
+            "keywords": [
+                "extension",
+                "laravel-admin",
+                "wechat"
+            ]
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "v0.2",
             "source": {
@@ -1125,6 +1171,65 @@
                 "media"
             ],
             "time": "2018-09-23T06:02:37+00:00"
+        },
+        {
+            "name": "laravel-admin-ext/phpinfo",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-admin-extensions/phpinfo.git",
+                "reference": "4212753c00e800c2d74f2cae79bf79cb1fd626b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-admin-extensions/phpinfo/zipball/4212753c00e800c2d74f2cae79bf79cb1fd626b2",
+                "reference": "4212753c00e800c2d74f2cae79bf79cb1fd626b2",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Encore\\PHPInfo\\PHPInfoServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Encore\\PHPInfo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "song",
+                    "email": "zosong@126.com"
+                }
+            ],
+            "description": "Show php information in laravel-admin",
+            "homepage": "https://github.com/laravel-admin-ext/phpinfo",
+            "keywords": [
+                "extension",
+                "laravel-admin",
+                "phpinfo"
+            ],
+            "time": "2018-09-09T09:38:15+00:00"
         },
         {
             "name": "laravel-admin-ext/simplemde",
@@ -5299,7 +5404,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ipusi/wechat": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

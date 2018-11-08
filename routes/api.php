@@ -17,11 +17,11 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::get('/wechat/{id}/menu', 'WechatController@menu')->name('wechat.menu');
-Route::post('/wechat/{id}/menu/publish', 'WechatController@menupublish')
-            ->name('wechat.menupublish');
-Route::post('/wechat/{id}/menu/clear', 'WechatController@menuclear')
-            ->name('wechat.menuclear');
-Route::post('/wechat/{id}/material/', 'WechatController@material')
-            ->name('wechat.material');
+// Route::get('/wechat/{id}/menu', 'WechatController@menu')->name('wechat.menu');
+// Route::post('/wechat/{id}/menu/publish', 'WechatController@menupublish')
+//             ->name('wechat.menupublish');
+// Route::post('/wechat/{id}/menu/clear', 'WechatController@menuclear')
+//             ->name('wechat.menuclear');
+// Route::post('/wechat/{id}/material/', 'WechatController@material')
+//             ->name('wechat.material');
 

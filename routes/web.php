@@ -17,6 +17,6 @@ use App\Http\Controllers\WechatMenuController;
 //     return view('welcome');
 // });
 
-Route::get('/wechat/menu', 'WechatMenuController@index')->name('wechatmenu.index');
-Route::any('/wechat/{id}', 'WechatController@serve')->name('wechat.serve');
+// Route::get('/wechat/menu', 'WechatMenuController@index')->name('wechatmenu.index');
+// Route::any('/wechat/{id}', 'WechatController@serve')->name('wechat.serve');
 // Route::get('/wechat/menu', 'WechatController@menu')->name('wechat.menu');

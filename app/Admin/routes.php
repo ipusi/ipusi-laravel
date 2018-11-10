@@ -8,8 +8,8 @@ Route::group([
     'prefix'        => config('admin.route.prefix'),
     'namespace'     => config('admin.route.namespace'),
     'middleware'    => config('admin.route.middleware'),
-], function (Router $router) {
-
-    $router->get('/', 'HomeController@index');
-
+    ], function (Router $router) {
+        $router->get('/', 'HomeController@index');
+        // $router->resource('wechatconfigs', WechatManageController::class);
+        $router->get('/wechat', 'WechatManageController@index');
 });

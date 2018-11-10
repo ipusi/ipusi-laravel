@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d21175a5b2a0c510811a99285fad776",
+    "content-hash": "e9c360f8e0c9f3d2383ab3beaac7b3a8",
     "packages": [
         {
             "name": "caouecs/laravel-lang",
@@ -978,52 +978,6 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
-            "name": "ipusi/wechat",
-            "version": "9999999-dev",
-            "dist": {
-                "type": "path",
-                "url": "app/Admin/Extensions/laravel-admin-ext/wechat",
-                "reference": "abb1e536e44d97a35ffe70a5b9d4284a881f1ace",
-                "shasum": null
-            },
-            "require": {
-                "encore/laravel-admin": "~1.6",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LaravelAdminExt\\Wechat\\WechatServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LaravelAdminExt\\Wechat\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "ren kun",
-                    "email": "rk.tingyu@icloud.com"
-                }
-            ],
-            "description": "laravel-admin extends for wechat",
-            "homepage": "https://github.com/ipusi/wechat",
-            "keywords": [
-                "extension",
-                "laravel-admin",
-                "wechat"
-            ]
-        },
-        {
             "name": "jakub-onderka/php-console-color",
             "version": "v0.2",
             "source": {
@@ -1180,6 +1134,67 @@
                 "laravel-admin"
             ],
             "time": "2018-10-26T10:29:14+00:00"
+        },
+        {
+            "name": "laravel-admin-ext/api-tester",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-admin-extensions/api-tester.git",
+                "reference": "5884bb17b97b853d968d057c8acf1439f26a2a83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-admin-extensions/api-tester/zipball/5884bb17b97b853d968d057c8acf1439f26a2a83",
+                "reference": "5884bb17b97b853d968d057c8acf1439f26a2a83",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "encore/laravel-admin": "~1.5",
+                "laravel/framework": "~5.5",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "laravel/laravel": "~5.5",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Encore\\Admin\\ApiTester\\ApiTesterServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Encore\\Admin\\ApiTester\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "z-song",
+                    "email": "zosong@126.com"
+                }
+            ],
+            "description": "Api tester for laravel",
+            "homepage": "https://github.com/laravel-admin-extensions/api-tester",
+            "keywords": [
+                "api",
+                "laravel-admin",
+                "tester"
+            ],
+            "time": "2018-04-27T09:09:23+00:00"
         },
         {
             "name": "laravel-admin-ext/config",
@@ -6143,9 +6158,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "ipusi/wechat": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

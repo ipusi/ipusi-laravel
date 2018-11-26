@@ -9,6 +9,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use App\Admin\Extensions\ExcelExporter;
 
 class WechatConfigController extends Controller
 {
@@ -80,7 +81,6 @@ class WechatConfigController extends Controller
     protected function grid()
     {
         $grid = new Grid(new WechatConfig);
-
         $grid->id('Id');
         $grid->catagory('Catagory');
         $grid->name('Name');
@@ -88,9 +88,8 @@ class WechatConfigController extends Controller
         $grid->secret('Secret');
         $grid->aes_key('Aes key');
         $grid->created_at('Created at');
-        // $grid->updated_at('Updated at');
         $grid->user_id('User id');
-
+        $grid->exporter(new ExcelExporter($grid));
         return $grid;
     }
 

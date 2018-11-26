@@ -126,9 +126,9 @@ class PostController extends Controller
 
         $form->text('title', 'Title');
         $form->text('summary', 'Summary');
-        $form->textarea('body', 'Body');
-        $form->number('user_id', 'User id');
-        $form->switch('ispublish', 'Ispublish');
+        $form->simplemde('body', 'Body');
+        // $form->number('user_id', 'User id');
+        // $form->switch('ispublish', 'Ispublish');
 
         return $form;
     }

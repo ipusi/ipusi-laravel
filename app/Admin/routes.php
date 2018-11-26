@@ -11,5 +11,6 @@ Route::group([
     ], function (Router $router) {
         $router->get('/', 'HomeController@index');
         $router->resource('/wechat/config', WechatConfigController::class);
+        $router->resource('/post', PostController::class);
         $router->get('/wechat/menu', 'WechatManageController@menu');
 });

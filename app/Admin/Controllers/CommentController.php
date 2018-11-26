@@ -2,16 +2,15 @@
 
 namespace App\Admin\Controllers;
 
-use App\WechatConfig;
+use App\Comment;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
-use App\Admin\Extensions\ExcelExporter;
-use Encore\Admin\Facades\Admin;
-class WechatConfigController extends Controller
+
+class CommentController extends Controller
 {
     use HasResourceActions;
 
@@ -24,8 +23,8 @@ class WechatConfigController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('公众号配置')
-            ->description('配置公众号信息')
+            ->header(trans('admin.index'))
+            ->description('评论'.trans('admin.index'))
             ->body($this->grid());
     }
 
@@ -39,8 +38,8 @@ class WechatConfigController extends Controller
     public function show($id, Content $content)
     {
         return $content
-            ->header('Detail')
-            ->description('description')
+            ->header(trans('admin.detail'))
+            ->description('评论'.trans('admin.detail'))
             ->body($this->detail($id));
     }
 
@@ -54,8 +53,8 @@ class WechatConfigController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('Edit')
-            ->description('description')
+            ->header(trans('admin.edit'))
+            ->description('评论'.trans('admin.edit'))
             ->body($this->form()->edit($id));
     }
 
@@ -68,8 +67,8 @@ class WechatConfigController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('Create')
-            ->description('description')
+            ->header(trans('admin.create'))
+            ->description('评论'.trans('admin.create'))
             ->body($this->form());
     }
 
@@ -80,17 +79,16 @@ class WechatConfigController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new WechatConfig);
-        $grid->id('Id');
-        $grid->catagory('Catagory');
-        $grid->name('Name');
-        $grid->app_id('App id');
-        $grid->secret('Secret');
-        $grid->aes_key('Aes key');
+        $grid = new Grid(new Comment);
+
+        $grid->id('序号');
+        $grid->body('Body');
+        $grid->version('Version');
         $grid->user_id('User id');
-        $grid->created_at(trans('admin.created_at'));
-        $grid->updated_at(trans('admin.updated_at'));
-        $grid->exporter(new ExcelExporter($grid));
+        $grid->post_id('Post id');
+        $grid->created_at('创建时间');
+        $grid->updated_at('更新时间');
+
         return $grid;
     }
 
@@ -102,17 +100,15 @@ class WechatConfigController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(WechatConfig::findOrFail($id));
+        $show = new Show(Comment::findOrFail($id));
 
-        $show->id('Id');
-        $show->catagory('Catagory');
-        $show->name('Name');
-        $show->app_id('App id');
-        $show->secret('Secret');
-        $show->aes_key('Aes key');
-        $show->created_at(trans('admin.created_at'));
-        $show->updated_at(trans('admin.updated_at'));
-        // $show->user_id('User id');
+        $show->id('序号');
+        $show->body('Body');
+        $show->version('Version');
+        $show->user_id('User id');
+        $show->post_id('Post id');
+        $show->created_at('创建时间');
+        $show->updated_at('更新时间');
 
         return $show;
     }
@@ -124,14 +120,12 @@ class WechatConfigController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new WechatConfig);
+        $form = new Form(new Comment);
 
-        $form->text('catagory', 'Catagory');
-        $form->text('name', 'Name');
-        $form->text('app_id', 'App id');
-        $form->text('secret', 'Secret');
-        $form->text('aes_key', 'Aes key');
-        $form->display('user_id', 'User id')->value(Admin::user()->id);
+        $form->textarea('body', 'Body');
+        $form->number('version', 'Version')->default(1);
+        $form->number('user_id', 'User id');
+        $form->number('post_id', 'Post id');
 
         return $form;
     }

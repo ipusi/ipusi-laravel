@@ -22,6 +22,7 @@ return [
     'continue_creating'     => '继续创建',
     'view'                  => '查看',
     'detail'                => '详细',
+    'index'                 => '主页',
     'browse'                => '浏览',
     'reset'                 => '重置',
     'export'                => '导出',
@@ -99,4 +100,7 @@ return [
         'filter_placeholder' => '过滤',
     ],
     'menu_titles' => [],
+    'Id'                    => '序号',
+    'Updated at'            => '更新时间',
+    'Created at'            => '创建时间'
 ];

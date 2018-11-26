@@ -23,8 +23,8 @@ class PostController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('文章管理')
-            ->description('description')
+            ->header(trans('admin.index'))
+            ->description('文章'.trans('admin.index'))
             ->body($this->grid());
     }
 
@@ -38,8 +38,8 @@ class PostController extends Controller
     public function show($id, Content $content)
     {
         return $content
-            ->header('详情')
-            ->description('description')
+            ->header(trans('admin.detail'))
+            ->description('文章'.trans('admin.detail'))
             ->body($this->detail($id));
     }
 
@@ -53,8 +53,8 @@ class PostController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('Edit')
-            ->description('description')
+            ->header(trans('admin.edit'))
+            ->description('文章'.trans('admin.edit'))
             ->body($this->form()->edit($id));
     }
 
@@ -67,8 +67,8 @@ class PostController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('Create')
-            ->description('description')
+            ->header(trans('admin.create'))
+            ->description('文章'.trans('admin.create'))
             ->body($this->form());
     }
 
@@ -81,13 +81,13 @@ class PostController extends Controller
     {
         $grid = new Grid(new Post);
 
-        $grid->id('Id');
+        $grid->id('序号');
         $grid->title('Title');
         $grid->summary('Summary');
         $grid->body('Body');
         $grid->user_id('User id');
-        $grid->created_at('Created at');
-        $grid->updated_at('Updated at');
+        $grid->created_at('创建时间');
+        $grid->updated_at('更新时间');
         $grid->ispublish('Ispublish');
 
         return $grid;
@@ -103,13 +103,13 @@ class PostController extends Controller
     {
         $show = new Show(Post::findOrFail($id));
 
-        $show->id('Id');
+        $show->id('序号');
         $show->title('Title');
         $show->summary('Summary');
         $show->body('Body');
         $show->user_id('User id');
-        $show->created_at('Created at');
-        $show->updated_at('Updated at');
+        $show->created_at('创建时间');
+        $show->updated_at('更新时间');
         $show->ispublish('Ispublish');
 
         return $show;
@@ -126,9 +126,9 @@ class PostController extends Controller
 
         $form->text('title', 'Title');
         $form->text('summary', 'Summary');
-        $form->simplemde('body', 'Body');
-        // $form->number('user_id', 'User id');
-        // $form->switch('ispublish', 'Ispublish');
+        $form->textarea('body', 'Body');
+        $form->number('user_id', 'User id')->default(1);
+        $form->switch('ispublish', 'Ispublish');
 
         return $form;
     }

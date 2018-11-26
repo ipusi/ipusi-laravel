@@ -10,6 +10,6 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
     ], function (Router $router) {
         $router->get('/', 'HomeController@index');
-        // $router->resource('wechatconfigs', WechatManageController::class);
-        $router->get('/wechat', 'WechatManageController@index');
+        $router->resource('/wechat/config', WechatConfigController::class);
+        $router->get('/wechat/menu', 'WechatManageController@menu');
 });

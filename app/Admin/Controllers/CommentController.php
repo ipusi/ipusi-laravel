@@ -23,8 +23,8 @@ class CommentController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header(trans('admin.index'))
-            ->description('评论'.trans('admin.index'))
+            ->header(trans('admin.Index'))
+            ->description('评论'.trans('admin.Index'))
             ->body($this->grid());
     }
 
@@ -38,8 +38,8 @@ class CommentController extends Controller
     public function show($id, Content $content)
     {
         return $content
-            ->header(trans('admin.detail'))
-            ->description('评论'.trans('admin.detail'))
+            ->header(trans('admin.Detail'))
+            ->description('评论'.trans('admin.Detail'))
             ->body($this->detail($id));
     }
 
@@ -53,8 +53,8 @@ class CommentController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header(trans('admin.edit'))
-            ->description('评论'.trans('admin.edit'))
+            ->header(trans('admin.Edit'))
+            ->description(trans('admin.Edit').'评论')
             ->body($this->form()->edit($id));
     }
 
@@ -67,8 +67,8 @@ class CommentController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header(trans('admin.create'))
-            ->description('评论'.trans('admin.create'))
+            ->header(trans('admin.Create'))
+            ->description(trans('admin.Create').'评论')
             ->body($this->form());
     }
 
